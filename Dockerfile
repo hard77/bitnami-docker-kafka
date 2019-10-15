@@ -12,9 +12,8 @@ RUN install_packages libc6 libgcc1 zlib1g
 RUN . ./libcomponent.sh && component_unpack "java" "1.8.222-0" --checksum e5a677e160c01cd605bc6aae75cc937d4b2d37514b3e1d0a1dd2d332422e68c7
 RUN . ./libcomponent.sh && component_unpack "kafka" "1.1.1-31" --checksum d00175ba6d82cfa343646ef9a614f890d5a51a40aeb1699e08b43fc17c6a143a
 
+RUN cd /opt/
 RUN pwd
-RUN cd /
-RUN ls -lrth
 COPY rootfs /
 RUN /postunpack.sh
 ENV ALLOW_PLAINTEXT_LISTENER="no" \
